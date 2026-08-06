@@ -9,7 +9,7 @@ terraform {
   # remote state storage location
   backend "s3" {
     bucket         = "pandu-remote-state-dev"
-    key            = "roboshop-bastion-eks.tfstate"
+    key            = "roboshop-acm-eks.tfstate"
     region         = "us-east-1"
     encrypt        = true
     use_lockfile   = true 
