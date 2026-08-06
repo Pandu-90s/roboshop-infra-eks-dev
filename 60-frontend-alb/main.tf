@@ -9,7 +9,7 @@ resource "aws_lb" "public_alb" {
 
   tags = merge(
     {
-        Name = "${local.common_name}-frontend_alb"
+        Name = "${local.common_name}-public_alb"
     },
     local.common_tags
   )
@@ -17,7 +17,7 @@ resource "aws_lb" "public_alb" {
 
 
 resource "aws_lb_listener" "https" {
-  load_balancer_arn = aws_lb.frontend_alb.arn
+  load_balancer_arn = aws_lb.public_alb.arn
   port              = "443"
   protocol          = "HTTPS"
   ssl_policy = "ELBSecurityPolicy-2016-08"
@@ -41,8 +41,8 @@ resource "aws_route53_record" "www" {
 
   alias {
     #AWS details
-    name                   = aws_lb.frontend_alb.dns_name
-    zone_id                = aws_lb.frontend_alb.zone_id
+    name                   = aws_lb.public_alb.dns_name
+    zone_id                = aws_lb.public_alb.zone_id
     evaluate_target_health = true
   }
   allow_overwrite = true
