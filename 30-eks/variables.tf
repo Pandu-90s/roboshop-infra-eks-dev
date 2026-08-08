@@ -11,7 +11,7 @@ variable "eks_version" {
 }
 
 variable "enable_blue" {
-    default = true
+    default = false
 }
 
 variable "blue_version" {
