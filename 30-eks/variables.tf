@@ -11,7 +11,7 @@ variable "eks_version" {
 }
 
 variable "enable_blue" {
-    default = false
+    default = true
 }
 
 variable "blue_version" {
@@ -19,7 +19,7 @@ variable "blue_version" {
 }
 
 variable "enable_green" {
-    default = true
+    default = false
 }
 
 variable "green_version" {
