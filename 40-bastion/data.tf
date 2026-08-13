@@ -30,4 +30,3 @@ data "aws_ami" "joindevops" {
     values = ["x86_64"]
   }
 }
-

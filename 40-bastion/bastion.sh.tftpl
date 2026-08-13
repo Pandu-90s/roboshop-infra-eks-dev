@@ -1,12 +1,12 @@
 #!/bin/bash
 
 growpart /dev/nvme0n1 ${partition_number}
-lvextend -r -L +${extend_size}G /dev/RootVG/VarVol
+lvextend -r -L +${extend_size}G /dev/RootVG/varVol
 xfs_growfs /var
 
 yum install -y yum-utils
 yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
-yum -y install terraform 
+yum -y install terraform
 
 # Docker
 dnf -y install dnf-plugins-core
@@ -42,4 +42,4 @@ install -m 0755 /tmp/k9s /usr/local/bin/k9s && rm /tmp/k9s
 #Helm
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-4
 chmod 700 get_helm.sh
-./get_helm.sh 
+./get_helm.sh
