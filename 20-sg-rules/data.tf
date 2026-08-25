@@ -45,4 +45,3 @@ data "aws_ssm_parameter" "sonar_sg_id" {
 data "http" "my_public_ip" {
   url = "https://ipv4.icanhazip.com"
 }
-
