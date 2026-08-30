@@ -19,5 +19,9 @@ variable "sonar" {
 }
 
 variable "jenkins" {
+    default = false
+}
+
+variable "runner" {
     default = true
 }
